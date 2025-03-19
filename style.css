@@ -27,6 +27,7 @@ header{
 
 #visual{
     margin-top: 20px;
+    margin-bottom: 40px;
 }
     #visual ul,li{
     list-style: none;
@@ -149,4 +150,86 @@ label.right{
 #slidelist:hover .slideitem{
     animation-play-state: paused;
     /* transform: translateX(0); */
+}
+
+/* 콘텐츠 영역 스타일 */
+#content{
+    text-align: center;
+}
+
+#category_text hr , #notive_text hr{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#category_text h1 , #notive_text {
+    margin-bottom: 20px;
+}
+
+.content_categorys{
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    height: 50%;
+    margin: 20px 20px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.content_categorys img{
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    
+}
+
+#health_food , #digital , #Fancy , #Perfume , #hair_care{ 
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.content_text_box{
+    height: 30%;
+    min-height: 230px;
+    line-height: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content_Product_name > hr{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.opacity_text{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+#notice{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.notice_type{
+    text-align: left;
+}
+
+.notice_title{
+    text-align: left;
+}
+
+
+ul > li{
+    list-style: none;
+}
+
+.notice_radio_li >div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
