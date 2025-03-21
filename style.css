@@ -90,7 +90,7 @@ label.right{
     background-repeat: no-repeat;
 }
 
-[id="slide01"]:checked ~ #slidelist .slideitem{
+#slide01:checked ~ #slidelist .slideitem{
     transform: translateX(0);
     animation: slide01 8s infinite linear;
 }
@@ -208,28 +208,78 @@ label.right{
     opacity: 0.5;
 }
 
-
-#notice{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+/* 공지사항 스타일 */
+#notice_radio{
+    margin-bottom: 30px;
 }
 
-.notice_type{
-    text-align: left;
+#notice_slide{
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
 }
+
 
 .notice_title{
     text-align: left;
 }
 
+#notice_slide_ul > li > a{
+    display: flex;
+    justify-content: space-around;
 
-ul > li{
-    list-style: none;
 }
 
-.notice_radio_li >div{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+#notice_slide_ul{
+    white-space: nowrap;
+}
+
+#notice_slide_ul > li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all 1s;
+}
+
+#notice_slide_ul > li > a{
+    /* display: block; */
+    position: relative;
+    /* width: 100%; */
+}
+
+#notice_slide_ul label{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+}
+
+.radio_left{
+    left: 30px;
+    background: url(./image\ copy.png) center center / 50% no-repeat; 
+}
+.radio_right{
+    right: 30px;
+    background: url(./image.png) center center / 50% no-repeat; 
+}
+
+#radio01:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(0%);
+}
+#radio02:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(-100%);
+}
+#radio03:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(-200%);
+}
+#radio04:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(-300%);
+}
+#radio05:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(-400%);
+}
+#radio06:checked ~ .notice_slide .notice_slide_ul > li{
+    transform: translateX(-500%);
 }
