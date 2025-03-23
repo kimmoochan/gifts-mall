@@ -283,3 +283,14 @@ label.right{
 #radio06:checked ~ .notice_slide .notice_slide_ul > li{
     transform: translateX(-500%);
 }
+
+/* 상품입점/제휴문의 스타일 */
+#alliance_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#alliance_text > hr{
+    width: 50%;
+    margin: 20px 0;
+}
