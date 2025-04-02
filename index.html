@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>메인페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 헤더 -->
+    <!-- 로딩 애니메이션 -->
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
 
-    
+    <!-- 헤더 -->
     <header>
         <div id="logo">
-            <img src="./[웹디자인 및 개발] 2025 지방기능경기대회 선수제공파일/선수제공파일/A-Module/images/logo.png" alt="">
-
+            <a href="./index.html"><img src="./[웹디자인 및 개발] 2025 지방기능경기대회 선수제공파일/선수제공파일/A-Module/images/logo.png" alt=""></a>
         </div>
         <div id="head_nav">
-            <a href="#"><span>소개</span></a>
+            <a href="./sub01.html">소개</a>
             <div id="head_nav_menu">
-                <a id="menu_hover" href="#">판매상품</a>
+                <a id="menu_hover" href="./sub02.html">판매상품</a>
                 <div id="menu_none">
-                    <a class="menu_none" href="#">전체상품</a>
-                    <a class="menu_none" href="#">인기상품</a>
-
+                    <a class="menu_none" href="./sub02.html">전체상품</a>
+                    <a class="menu_none" href="./sub03.html">인기상품</a>
                 </div>
-
             </div>
-            <a href="#"><span>가맹점</span></a>
-            <a href="#"><span>장바구니</span></a>
+            <a href="#">가맹점</a>
+            <a href="./sub04.html">장바구니</a>
         </div>
         <div id="login">
             <span>로그인</span>
@@ -497,14 +500,9 @@
 
             </div>
             <div id="notice_radio">
-                <input type="radio" name="notice_radio_name" id="radio01" checked>                                                                                                                                                      
-                <input type="radio" name="notice_radio_name" id="radio02">                                                                                                                                                      
-                <input type="radio" name="notice_radio_name" id="radio03">                                                                                                                                                      
-                <input type="radio" name="notice_radio_name" id="radio04">                                                                                                                                                      
-                <input type="radio" name="notice_radio_name" id="radio05">                                                                                                                                                      
-                <input type="radio" name="notice_radio_name" id="radio06">  
+                
                 <div id="notice_slide">
-
+                    
                     <ul id="notice_slide_ul">
                         <li>
                             <a>
@@ -540,7 +538,10 @@
                         </li>
                         
                     </ul>
-                </div>                                                                                                                                                    
+                </div>  
+                <img src="./img/image copy.png" alt="">
+                <span>1/6</span>
+                <img src="./img/image.png" alt="">                                                                                                                                                  
             </div>
             <!-- 상품입점/제휴문의 영역 -->
             <div id="alliance_text">
@@ -604,6 +605,7 @@
             </table>
         </div>
     </main>
+    <!-- 푸터 -->
     <footer>
         <div id="footer_head">
             <img src="./[웹디자인 및 개발] 2025 지방기능경기대회 선수제공파일/선수제공파일/A-Module/images/logo.png" alt="">
@@ -643,7 +645,6 @@
             </span>
 
         </div>
-
     </footer>
 </body>
 </html>
