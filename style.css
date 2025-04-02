@@ -1,26 +1,30 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* 메뉴 네비게이션 스타일 */
 
 
-#menu_none{
-    display: flex;
-    flex-direction: column;
+#menu_none {
     position: absolute;
+    width: 200px;
+    height: 0;
+    overflow: hidden; 
+    transition: height 0.3s; 
 }
 
-#menu_none:hover a{
-    display: block;
+#head_nav_menu:hover #menu_none {
+    height: 50px;
 }
 
-#menu_none a{
-    display: none;
-}
-#menu_hover:hover ~ #menu_none a{
+#menu_none a {
     display: block;
+    color: black;
+    transition: background-color 0.3s;
 }
 
 /* 헤더 스타일 */
@@ -65,7 +69,7 @@ header img{
     margin-top: 20px;
     margin-bottom: 40px;
 }
-    #visual ul,li{
+#visual ul,li{
     list-style: none;
 }
 
@@ -75,13 +79,15 @@ header img{
 }
 
 #slidebox {
-    max-width: 1000px;
+    height: 800px;
     width: 100%;
     margin: 0 auto;
 }
 
 #slidebox img{
     max-width: 100%;
+    height: 800px;
+    cursor: pointer;
 }
 
 #slidebox #slidelist{
@@ -126,19 +132,29 @@ label.right{
     background-repeat: no-repeat;
 }
 
+
 #slide01:checked ~ #slidelist .slideitem{
     transform: translateX(0);
     animation: slide01 8s infinite linear;
 }
-[id="slide02"]:checked ~ #slidelist .slideitem{
+#slide02:checked ~ #slidelist .slideitem{
     transform: translateX(-100%);
-    animation: slide02 8s infinite linear
+    animation: slide02 8s infinite linear;
 }
-[id="slide03"]:checked ~ #slidelist .slideitem{
+#slide03:checked ~ #slidelist .slideitem{
     transform: translateX(-200%);
     animation: slide03 8s infinite linear;
 }
 
+#visual:hover #slide01:checked ~ #slidelist .slideitem{
+    animation-play-state: paused;
+}
+#visual:hover #slide02:checked ~ #slidelist .slideitem{
+    animation-play-state: paused;
+}
+#visual:hover #slide03:checked ~ #slidelist .slideitem{
+    animation-play-state: paused;
+}
 
 @keyframes slide01 {
     0%,31%,100%{
@@ -174,9 +190,6 @@ label.right{
     }
 }
 
-#slidebox{
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
 
 .slideitem img{
     width: 100%;
@@ -185,7 +198,6 @@ label.right{
 
 #slidelist:hover .slideitem{
     animation-play-state: paused;
-    /* transform: translateX(0); */
 }
 
 /* 콘텐츠 영역 스타일 */
@@ -223,11 +235,12 @@ label.right{
     display: flex;
     justify-content: space-around;
     margin-bottom: 100px;
+    flex-wrap: wrap;
 }
 
 .content_text_box{
     height: 30%;
-    min-height: 230px;
+    min-height: 300px;
     line-height: 25px;
     display: flex;
     flex-direction: column;
@@ -247,6 +260,12 @@ label.right{
 /* 공지사항 스타일 */
 #notice_radio{
     margin-bottom: 50px;
+}
+
+#notice_radio img{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
 }
 
 #notice_slide{
@@ -500,4 +519,115 @@ footer hr{
 #footer_end{
     text-align: center;
     margin-bottom: 20px;
+}
+
+#f_color,#t_color,#k_color,#i_color,#y_color{
+    cursor: pointer;
+}
+
+/* sub01 스타일 */
+#sub01_imgs{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#sub01_imgs img{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+/* sub02 버튼 스타일 */
+.content_shopping_basket{
+    height: 30px;
+    width: 70px;
+    border: solid 1px #346aff;
+    border-radius: 5px;
+    color: #346aff;
+    background-color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.content_purchase_button{
+    height: 30px;
+    width: 70px;
+    background-color: #346aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* sub04 스타일 */
+#main_shopping_basket{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#main_shopping_basket span{
+    margin: 0 20px;
+}
+
+#main_shopping_basket img{
+    width: 100px;
+    height: 100px;
+}
+
+
+/* 로딩 애니메이션 스타일 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 3s forwards;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes fadeOut {
+    0% { 
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0; 
+        visibility: hidden; 
+    }
+}
+
+.content {
+    display: none;
+    animation: showContent 0s 3s all;
+}
+
+@keyframes showContent {
+    0% { opacity: 0; }
+    100% { opacity: 1; display: block; }
 }
